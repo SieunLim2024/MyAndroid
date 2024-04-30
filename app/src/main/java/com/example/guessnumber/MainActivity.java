@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void guess(View view){
         EditText enterNumber = (EditText) findViewById(R.id.enterNumber);
+        if(enterNumber.getText().toString().isEmpty()){
+            Toast.makeText(getApplicationContext(), "enter a number!",Toast.LENGTH_SHORT).show();
+            return;
+        }
         int userNumber= Integer.parseInt(enterNumber.getText().toString());
         if(userNumber==comNumber){
             Toast.makeText(getApplicationContext(), "correct!",Toast.LENGTH_LONG).show();
@@ -38,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "low",Toast.LENGTH_LONG).show();
 
         }
+    }
+    public void answers(View view){
+        Toast.makeText(getApplicationContext(), comNumber+"",Toast.LENGTH_SHORT).show();
+    }
+    public void reset(View view){
+        Random random = new Random();
+        comNumber=random.nextInt(100)+1;
+        Toast.makeText(getApplicationContext(), "Number has been initialized.",Toast.LENGTH_SHORT).show();
     }
 
 }
