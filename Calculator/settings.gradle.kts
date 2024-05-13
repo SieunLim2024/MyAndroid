@@ -19,8 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "guessNumber"
-include(":app")
-include(":app")
+rootProject.name = "Calculatior"
 include(":app")
  
